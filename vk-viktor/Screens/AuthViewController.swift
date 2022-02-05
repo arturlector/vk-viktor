@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class AuthView: UIView {
     
@@ -23,6 +24,12 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: Решить как проверить текущую дату с expiresIn
+        if !Session.shared.token.isEmpty, Session.shared.userId > 0 {
+            performSegue(withIdentifier: "showFriendsScreen", sender: nil)
+            return
+        }
         
         authorizeToVKAPI()
         
@@ -89,7 +96,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
      &
      expires_in
      =
-     86400
+     86400 (unix-time)
      &
      user_id
      =
@@ -107,7 +114,12 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
                 return dict
             }
         
-        guard let token = params["access_token"], let userId = params["user_id"] else { return }
+        guard let token = params["access_token"], let userId = params["user_id"], let expiresIn = params["expires_in"] else { return }
+        
+        Session.shared.token = token
+        Session.shared.userId = userId
+        Session.shared.expiresIn = expiresIn
+        
         
         print(token)
         
