@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12ACF05027AED3ED00D92273 /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF04F27AED3ED00D92273 /* FriendsAPI.swift */; };
+		12ACF05327AED43A00D92273 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 12ACF05227AED43A00D92273 /* Alamofire */; };
+		12ACF05627AED46E00D92273 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 12ACF05527AED46E00D92273 /* SwiftyJSON */; };
+		12ACF05927AED6D100D92273 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 12ACF05827AED6D100D92273 /* SwiftKeychainWrapper */; };
+		12ACF05B27AED6F800D92273 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF05A27AED6F800D92273 /* Session.swift */; };
 		12F8F49F27A58EA8007EA748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8F49E27A58EA8007EA748 /* AppDelegate.swift */; };
 		12F8F4A127A58EA8007EA748 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8F4A027A58EA8007EA748 /* SceneDelegate.swift */; };
 		12F8F4A327A58EA8007EA748 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8F4A227A58EA8007EA748 /* AuthViewController.swift */; };
@@ -17,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12ACF04F27AED3ED00D92273 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
+		12ACF05A27AED6F800D92273 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		12F8F49B27A58EA8007EA748 /* vk-viktor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vk-viktor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F8F49E27A58EA8007EA748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12F8F4A027A58EA8007EA748 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,12 +40,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12ACF05627AED46E00D92273 /* SwiftyJSON in Frameworks */,
+				12ACF05327AED43A00D92273 /* Alamofire in Frameworks */,
+				12ACF05927AED6D100D92273 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12ACF04E27AED3CF00D92273 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				12ACF04F27AED3ED00D92273 /* FriendsAPI.swift */,
+				12ACF05A27AED6F800D92273 /* Session.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		12F8F49227A58EA8007EA748 = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				12F8F4B227A58EC3007EA748 /* Core */,
-				12F8F4B327A58ECC007EA748 /* Modules */,
+				12F8F4B327A58ECC007EA748 /* Screens */,
+				12ACF04E27AED3CF00D92273 /* Services */,
 				12F8F4B427A58ED7007EA748 /* Resources */,
 			);
 			path = "vk-viktor";
@@ -74,13 +94,13 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		12F8F4B327A58ECC007EA748 /* Modules */ = {
+		12F8F4B327A58ECC007EA748 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				12F8F4A227A58EA8007EA748 /* AuthViewController.swift */,
 				12F8F4B527A58F87007EA748 /* FriendsViewController.swift */,
 			);
-			path = Modules;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		12F8F4B427A58ED7007EA748 /* Resources */ = {
@@ -110,6 +130,11 @@
 			dependencies = (
 			);
 			name = "vk-viktor";
+			packageProductDependencies = (
+				12ACF05227AED43A00D92273 /* Alamofire */,
+				12ACF05527AED46E00D92273 /* SwiftyJSON */,
+				12ACF05827AED6D100D92273 /* SwiftKeychainWrapper */,
+			);
 			productName = "vk-viktor";
 			productReference = 12F8F49B27A58EA8007EA748 /* vk-viktor.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +163,11 @@
 				Base,
 			);
 			mainGroup = 12F8F49227A58EA8007EA748;
+			packageReferences = (
+				12ACF05127AED43A00D92273 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				12ACF05427AED46E00D92273 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				12ACF05727AED6D100D92273 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 12F8F49C27A58EA8007EA748 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,6 +196,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				12F8F4B627A58F87007EA748 /* FriendsViewController.swift in Sources */,
+				12ACF05027AED3ED00D92273 /* FriendsAPI.swift in Sources */,
+				12ACF05B27AED6F800D92273 /* Session.swift in Sources */,
 				12F8F4A327A58EA8007EA748 /* AuthViewController.swift in Sources */,
 				12F8F49F27A58EA8007EA748 /* AppDelegate.swift in Sources */,
 				12F8F4A127A58EA8007EA748 /* SceneDelegate.swift in Sources */,
@@ -388,6 +420,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12ACF05127AED43A00D92273 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		12ACF05427AED46E00D92273 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		12ACF05727AED6D100D92273 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12ACF05227AED43A00D92273 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12ACF05127AED43A00D92273 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		12ACF05527AED46E00D92273 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12ACF05427AED46E00D92273 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		12ACF05827AED6D100D92273 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12ACF05727AED6D100D92273 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12F8F49327A58EA8007EA748 /* Project object */;
 }
